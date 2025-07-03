@@ -40,6 +40,7 @@ To run this game locally:
 ## 👤 Author
 
 Sankalp Tripathi.
+
 contact me: https://www.linkedin.com/in/sankalp-tripathi-9bbb982b9
 
 ---
