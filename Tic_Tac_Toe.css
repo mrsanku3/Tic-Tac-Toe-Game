@@ -1,0 +1,174 @@
+/* --- Universal Reset & Box Sizing --- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- Body & Overall Layout --- */
+body {
+    font-family: 'Roboto', sans-serif; /* Clean, modern font */
+    background-color: #F0F2F5; /* Light gray background */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    min-height: 100vh;       /* Full viewport height */
+    overflow: hidden;        /* Prevent scrolling */
+    color: #333;             /* Default text color */
+}
+
+/* --- Game Container --- */
+.game-container {
+    background-color: #FFFFFF; /* White background for the game area */
+    border-radius: 12px;       /* Slightly rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 30px;             /* Internal spacing */
+    display: flex;
+    flex-direction: column;    /* Stack items vertically */
+    align-items: center;       /* Center items horizontally within container */
+    gap: 25px;                 /* Space between elements inside the container */
+    max-width: 90%;            /* Responsive width */
+    width: 450px;              /* Max width for desktop */
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #4A90E2; /* A nice blue for the title */
+    margin-bottom: 10px; /* Space below title */
+}
+
+/* --- Message Display (e.g., Player's Turn) --- */
+.message-display {
+    font-size: 1.4rem;
+    font-weight: 700;
+    min-height: 1.5em; /* Prevent layout shift when message changes */
+    color: #555;
+    text-align: center;
+}
+
+/* --- Game Board (Grid) --- */
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr);    /* 3 equal rows */
+    gap: 15px; /* Spacing between cells */
+    width: 360px; /* Fixed width for the game board itself */
+    height: 360px; /* Fixed height for the game board itself */
+    background-color: #E0E0E0; /* Light background for the grid area */
+    border-radius: 8px; /* Slightly rounded corners for the board */
+    padding: 10px; /* Small padding inside the board around cells */
+}
+
+/* --- Individual Game Cells --- */
+.cell {
+    background-color: #FFFFFF; /* White background for cells */
+    border: none;
+    border-radius: 8px;       /* Rounded corners for cells */
+    font-size: 5rem;          /* Large font size for X/O */
+    font-weight: 700;
+    color: #333;              /* Default color for X/O */
+    cursor: pointer;          /* Indicate clickable */
+    display: flex;
+    justify-content: center;  /* Center X/O horizontally */
+    align-items: center;      /* Center X/O vertically */
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow on cells */
+    outline: none; /* Remove focus outline */
+}
+
+/* --- Cell Hover Effect --- */
+.cell:hover {
+    background-color: #F5F5F5; /* Lighter background on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12); /* Increased shadow on hover */
+}
+
+/* --- Cell Click/Active Effect --- */
+.cell:active {
+    transform: translateY(0); /* Press down effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06); /* Smaller shadow when pressed */
+    background-color: #E8E8E8; /* Slightly darker when pressed */
+}
+
+/* --- Styles for Filled Cells (e.g., after X or O is placed) --- */
+/* You would add these classes with JavaScript */
+.cell.x {
+    color: #E74C3C; /* Red for X */
+    cursor: default; /* Not clickable once filled */
+    pointer-events: none; /* Disable interaction */
+}
+
+.cell.o {
+    color: #2ECC71; /* Green for O */
+    cursor: default; /* Not clickable once filled */
+    pointer-events: none; /* Disable interaction */
+}
+
+/* --- Reset Button --- */
+#reset-button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#reset-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px);
+}
+
+#reset-button:active {
+    background-color: #3e8e41; /* Even darker green on active */
+    transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 500px) {
+    .game-container {
+        padding: 20px;
+        gap: 20px;
+    }
+    h1 {
+        font-size: 2.2rem;
+    }
+    .message-display {
+        font-size: 1.2rem;
+    }
+    .game-board {
+        width: 80vmin; /* Make board responsive to viewport width */
+        height: 80vmin;
+        gap: 10px;
+    }
+    .cell {
+        font-size: 15vmin; /* Make X/O size relative to cell size */
+        border-radius: 6px;
+    }
+    #reset-button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 350px) {
+    .game-container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8rem;
+    }
+    .message-display {
+        font-size: 1rem;
+    }
+    .game-board {
+        gap: 8px;
+    }
+    .cell {
+        font-size: 12vmin;
+    }
+}
