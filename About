@@ -22,22 +22,6 @@ A classic Tic-Tac-Toe game implemented using HTML, CSS, and vanilla JavaScript. 
 3.  **Winning:** The first player to get three of their marks in a row (horizontally, vertically, or diagonally) wins the game.
 5.  **Reset:** Click the "Reset Game" button to clear the board and start a new game.
 
-## 🚀 Getting Started
-
-To run this game locally:
-
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/mrsanku3/Tic-Tac-Toe-Game.git
-    ```
-2.  **Navigate to the project directory:**
-    ```bash
-    cd tic-tac-toe-js
-    ```
-3.  **Open `index.html`:** Simply open the `index.html` file in your preferred web browser (e.g., double-click it, or drag it into your browser window).
-
-
-## 👤 Author
 
 Sankalp Tripathi.
 contact me: 
